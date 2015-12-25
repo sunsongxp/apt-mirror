@@ -1,2 +1,7 @@
 ---
 # defaults file for apt-mirror
+
+storage_folder: /data/storage
+
+apt_mirror:
+  base_path: "{{ storage_folder }}/ubuntu"

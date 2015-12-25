@@ -1,2 +1,20 @@
 ---
 # tasks file for apt-mirror
+
+- name: Install apt-mirror
+  apt:
+    name=apt-mirror
+    state=present
+
+- name: Setup apt-mirror config file
+  template:
+    src=templates/apt-mirror.list.j2
+    dest=/etc/apt/mirror.list
+
+- name: Configure apt-mirror crontab
+  cron:
+    name="apt-mirror cron job"
+    cron_file=apt-mirror
+    minute="0"
+    hour="2"
+    state=present
