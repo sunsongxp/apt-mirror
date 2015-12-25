@@ -18,3 +18,5 @@
     minute="0"
     hour="2"
     state=present
+    user="root"
+    job="/usr/bin/apt-mirror > /var/spool/apt-mirror/var/cron.log"
